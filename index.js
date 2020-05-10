@@ -106,7 +106,7 @@ const stepThroughCell = (row, column) => {
     }
 
     //if we have visited that neighbour, continue to next neighbour
-    if (grid[nextRow][nextRow]) {
+    if (grid[nextRow][nextColumn]) {
       continue;
     }
 
