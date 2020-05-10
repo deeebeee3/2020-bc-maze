@@ -45,3 +45,11 @@ World.add(world, walls);
 const grid = Array(3)
   .fill(null)
   .map(() => Array(3).fill(false));
+
+const verticals = Array(3)
+  .fill(null)
+  .map(() => Array(2).fill(false));
+
+const horizontals = Array(3)
+  .fill(null)
+  .map(() => Array(2).fill(false));
