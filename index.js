@@ -100,7 +100,7 @@ const stepThroughCell = (row, column) => {
       nextRow < 0 ||
       nextRow >= cells ||
       nextColumn < 0 ||
-      nextColumns >= cells
+      nextColumn >= cells
     ) {
       continue;
     }
@@ -111,6 +111,11 @@ const stepThroughCell = (row, column) => {
     }
 
     //remove a wall from either horiontals or verticals
+    if (direction === "left") {
+      verticals[row][column - 1] = true;
+    } else if (direction === "right") {
+      verticals[row][column] = true;
+    }
   }
 
   //visit that next cell
