@@ -33,6 +33,22 @@ World.add(world, walls);
 
 // Maze generation
 
+const shuffle = (arr) => {
+  let counter = arr.length;
+
+  while (counter > 0) {
+    const index = Math.floor(Math.random() * counter);
+
+    counter--;
+
+    const temp = arr[counter];
+    arr[counter] = arr[index];
+    arr[index] = temp;
+  }
+
+  return arr;
+};
+
 //old way maze generation
 // const grid = [];
 // for (let i = 0; i < 3; i++) {
@@ -68,12 +84,12 @@ const stepThroughCell = (row, column) => {
   grid[row][column] = true;
 
   //assemble randomly-ordered list of neighbours
-  const neighbours = [
+  const neighbours = shuffle([
     [row - 1, column],
     [row, column + 1],
     [row + 1, column],
     [row, column - 1],
-  ];
+  ]);
 
   //for each neighbour.....
   //see if that neighbour is out of bounds
