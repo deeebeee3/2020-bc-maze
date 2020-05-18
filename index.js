@@ -129,7 +129,6 @@ const stepThroughCell = (row, column) => {
 
 stepThroughCell(startRow, startColumn);
 
-
 horizontals.forEach((row, rowIndex) => {
   row.forEach((open, columnIndex) => {
     if(open){
@@ -141,6 +140,25 @@ horizontals.forEach((row, rowIndex) => {
       rowIndex * unitLength + unitLength,
       unitLength,
       10,
+      {
+        isStatic: true
+      }
+    );
+    World.add(world, wall);
+  });
+});
+
+verticals.forEach((row, rowIndex) => {
+  row.forEach((open, columnIndex) => {
+    if(open){
+      return;
+    }
+
+    const wall = Bodies.rectangle(
+      columnIndex * unitLength + unitLength,
+      rowIndex * unitLength + unitLength / 2,
+      10,
+      unitLength,
       {
         isStatic: true
       }
