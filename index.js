@@ -123,10 +123,6 @@ const stepThroughCell = (row, column) => {
 
     stepThroughCell(nextRow, nextColumn);
   }
-
-  //visit that next cell
 };
 
 stepThroughCell(startRow, startColumn);
-
-console.log(grid);
